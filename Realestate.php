@@ -1,13 +1,13 @@
 <?php
 
-namespace WebCMS\RealEstateModule;
+namespace WebCMS\RealestateModule;
 
 /**
  * Description of Real estate
  *
  * @author Tomáš Voslař <tomas.voslar at webcook.cz>
  */
-class RealEstate extends \WebCMS\Module {
+class Realestate extends \WebCMS\Module {
 	
 	protected $name = 'Real Estate';
 	
