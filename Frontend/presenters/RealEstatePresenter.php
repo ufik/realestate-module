@@ -1,13 +1,13 @@
 <?php
 
-namespace FrontendModule\RealEstateModule;
+namespace FrontendModule\RealestateModule;
 
 /**
  * Description of RealEstatePresenter
  *
  * @author Tomáš Voslař <tomas.voslar at webcook.cz>
  */
-class RealEstatePresenter extends \FrontendModule\BasePresenter{
+class RealestatePresenter extends \FrontendModule\BasePresenter{
 	
 	private $repository;
 	

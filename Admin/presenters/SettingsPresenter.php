@@ -1,6 +1,6 @@
 <?php
 
-namespace AdminModule\RealEstateModule;
+namespace AdminModule\RealestateModule;
 
 /**
  * Description of SettingsPresenter

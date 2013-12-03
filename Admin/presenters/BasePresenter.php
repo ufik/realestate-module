@@ -1,13 +1,13 @@
 <?php
 
-namespace AdminModule\RealEstateModule;
+namespace AdminModule\RealestateModule;
 
 /**
  * Description of RealEstatePresenter
  *
  * @author Tomáš Voslař <tomas.voslar at webcook.cz>
  */
-class RealEstatePresenter extends \AdminModule\BasePresenter {
+class BasePresenter extends \AdminModule\BasePresenter {
 	
 	private $repository;
 	
