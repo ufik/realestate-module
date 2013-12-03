@@ -9,7 +9,7 @@ namespace WebCMS\RealestateModule;
  */
 class Realestate extends \WebCMS\Module {
 	
-	protected $name = 'Real Estate';
+	protected $name = 'Realestate';
 	
 	protected $author = 'Tomáš Voslař';
 	
