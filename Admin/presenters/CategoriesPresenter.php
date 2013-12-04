@@ -11,9 +11,9 @@ use Nette\Application\UI;
  */
 class CategoriesPresenter extends BasePresenter{
 	
-	private $repository;
+	protected $repository;
 	
-	/* @var \WebCMS\EshopModule\Doctrine\Category */
+	/* @var \WebCMS\RealestateModule\Doctrine\Category */
 	private $category;
 	
 	protected function beforeRender() {
@@ -63,7 +63,7 @@ class CategoriesPresenter extends BasePresenter{
 	
 	public function actionUpdateCategory($idPage, $id){
 		if($id) $this->category = $this->repository->find($id);
-		else $this->category = new \WebCMS\EshopModule\Doctrine\Category();
+		else $this->category = new \WebCMS\RealEstateModule\Doctrine\Category();
 	}
 	
 	public function categoryFormSubmitted(UI\Form $form){
@@ -75,10 +75,14 @@ class CategoriesPresenter extends BasePresenter{
 			$parent = NULL;
 
 		$this->category->setTitle($values->title);
-		$this->category->setSlug($values->slug);
+		if($this->category->getId() || !empty($values->slug)){
+			$this->category->setSlug($values->slug);
+		}
+		
 		$this->category->setMetaTitle($values->metaTitle);
 		$this->category->setMetaDescription($values->metaDescription);
 		$this->category->setMetaKeywords($values->metaKeywords);
+		
 		$this->category->setVisible($values->visible);
 		$this->category->setParent($parent);
 		$this->category->setFavourite($values->favourite);
@@ -115,7 +119,7 @@ class CategoriesPresenter extends BasePresenter{
 	
 	protected function createComponentCategoriesGrid($name){
 				
-		$grid = $this->createGrid($this, $name, '\WebCMS\EshopModule\Doctrine\Category', array(
+		$grid = $this->createGrid($this, $name, '\WebCMS\RealestateModule\Doctrine\Category', array(
 			array('by' => 'root', 'dir' => 'ASC'), 
 			array('by' => 'lft', 'dir' => 'ASC')
 			),
@@ -173,7 +177,7 @@ class CategoriesPresenter extends BasePresenter{
 			$this->redirect('Categories:default', array('idPage' => $idPage));
 	}
 	
-	public function actionDefault($idPage) {
+	public function actionDefault() {
 		$main = $this->repository->findBy(array(
 			'title' => 'Main',
 			'level' => 0,
@@ -181,7 +185,7 @@ class CategoriesPresenter extends BasePresenter{
 		));
 		
 		if(count($main) == 0){
-			$main = new \WebCMS\EshopModule\Doctrine\Category;
+			$main = new \WebCMS\RealestateModule\Doctrine\Category;
 			$main->setTitle('Main');
 			$main->setLanguage($this->state->language);
 			$main->setPath('');

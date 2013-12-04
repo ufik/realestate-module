@@ -20,6 +20,11 @@ class Realestate extends \WebCMS\Module {
 			'parameters' => FALSE
 			),
 		array(
+			'name' => 'Categories',
+			'frontend' => TRUE,
+			'parameters' => TRUE
+			),
+		array(
 			'name' => 'Settings',
 			'frontend' => FALSE
 			)
