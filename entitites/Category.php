@@ -1,6 +1,6 @@
 <?php
 
-namespace WebCMS\RealEstateModule\Doctrine;
+namespace WebCMS\RealestateModule\Doctrine;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Gedmo\Mapping\Annotation as gedmo;
@@ -9,7 +9,7 @@ use Doctrine\orm\Mapping as orm;
 /**
  * Description of Cateogory
  * @gedmo\Tree(type="nested")
- * @orm\Entity(repositoryClass="\WebCMS\RealEstateModule\Doctrine\CategoryRepository")
+ * @orm\Entity(repositoryClass="\WebCMS\RealestateModule\Doctrine\CategoryRepository")
  * @orm\Table(name="realEstateCategory")
  * @author Tomáš Voslař <tomas.voslar at webcook.cz>
  */

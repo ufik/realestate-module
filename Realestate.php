@@ -15,7 +15,7 @@ class Realestate extends \WebCMS\Module {
 	
 	protected $presenters = array(
 		array(
-			'name' => 'RealEstate',
+			'name' => 'Realestate',
 			'frontend' => TRUE,
 			'parameters' => FALSE
 			),

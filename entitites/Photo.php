@@ -1,6 +1,6 @@
 <?php
 
-namespace WebCMS\RealEstateModule\Doctrine;
+namespace WebCMS\RealestateModule\Doctrine;
 
 use Doctrine\ORM\Mapping as orm;
 
@@ -28,6 +28,11 @@ class Photo extends \AdminModule\Doctrine\Entity{
 	 */
 	private $path;
 	
+	/**
+	 * @orm\Column(name="`default`", type="boolean")
+	 */
+	private $default;
+	
 	public function getTitle() {
 		return $this->title;
 	}
@@ -50,5 +55,13 @@ class Photo extends \AdminModule\Doctrine\Entity{
 
 	public function setPath($path) {
 		$this->path = $path;
+	}
+	
+	public function getDefault() {
+		return $this->default;
+	}
+
+	public function setDefault($default) {
+		$this->default = $default;
 	}
 }

@@ -9,14 +9,14 @@ namespace AdminModule\RealestateModule;
  */
 class BasePresenter extends \AdminModule\BasePresenter {
 	
-	private $repository;
+	protected $repository;
 	
 	private $page;
 	
 	protected function startup() {
 		parent::startup();
 		
-		$this->repository = $this->em->getRepository('WebCMS\RModule\Doctrine\RealEstate');
+		$this->repository = $this->em->getRepository('WebCMS\RealestateModule\Doctrine\RealEstate');
 	}
 
 	protected function beforeRender() {

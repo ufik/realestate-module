@@ -1,6 +1,6 @@
 <?php
 
-namespace WebCMS\RealEstateModule\Doctrine;
+namespace WebCMS\RealestateModule\Doctrine;
 
 use Doctrine\orm\Mapping as orm;
 use Gedmo\Mapping\Annotation as gedmo;
@@ -65,17 +65,17 @@ class RealEstate extends \AdminModule\Seo {
 	private $hide;
 	
 	/**
-     * @orm\Column(length=64)
+     * @orm\Column(length=64, nullable=true)
      */
     private $city;
 	
 	/**
-     * @orm\Column(length=64)
+     * @orm\Column(length=64, nullable=true)
      */
     private $county;
 	
 	/**
-     * @orm\Column(length=64)
+     * @orm\Column(length=64, nullable=true)
      */
     private $mark;
 	

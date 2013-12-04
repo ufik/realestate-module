@@ -16,7 +16,7 @@ class RealestatePresenter extends \FrontendModule\BasePresenter{
 	protected function startup() {
 		parent::startup();
 	
-		$this->repository = $this->em->getRepository('WebCMS\RealEstateModule\Doctrine\RealEstate');
+		$this->repository = $this->em->getRepository('WebCMS\RealestateModule\Doctrine\RealEstate');
 	}
 
 	protected function beforeRender() {
