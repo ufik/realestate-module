@@ -114,7 +114,7 @@ class Category extends \AdminModule\Seo{
 	
     public function __construct()    {
         $this->children = new ArrayCollection();
-		$this->products = new ArrayCollection();
+		$this->realEstates = new ArrayCollection();
     }
 
     public function getSlug()
