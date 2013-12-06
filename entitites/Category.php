@@ -253,7 +253,7 @@ class Category extends \AdminModule\Seo{
 	}
 
 	public function setRealEstates($products) {
-		$this->products = $products;
+		$this->realEstates = $products;
 	}
 	
 	public function getFavourite() {
