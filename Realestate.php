@@ -17,7 +17,7 @@ class Realestate extends \WebCMS\Module {
 		array(
 			'name' => 'Realestate',
 			'frontend' => TRUE,
-			'parameters' => FALSE
+			'parameters' => TRUE
 			),
 		array(
 			'name' => 'Categories',

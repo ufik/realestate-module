@@ -240,10 +240,10 @@ class Category extends \AdminModule\Seo{
         return $this->getTitle();
     }
 	
-	public function getProducts() {
+	public function getRealEstates() {
 		
 		$products = array();
-		foreach($this->products as $p){
+		foreach($this->realEstates as $p){
 			if(!$p->getHide()){
 				$products[] = $p;
 			}
@@ -252,7 +252,7 @@ class Category extends \AdminModule\Seo{
 		return $products;
 	}
 
-	public function setProducts($products) {
+	public function setRealEstates($products) {
 		$this->products = $products;
 	}
 	

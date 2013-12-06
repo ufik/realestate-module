@@ -214,4 +214,13 @@ class RealEstate extends \AdminModule\Seo {
 	public function setDefaultPicture($defaultPicture) {
 		$this->defaultPicture = $defaultPicture;
 	}
+	
+	public function getMainPhoto(){
+		foreach($this->getPhotos() as $photo){
+			if($photo->getDefault())
+				return $photo;
+		}
+		
+		return new Photo();
+	}
 }
