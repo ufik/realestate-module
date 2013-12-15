@@ -67,17 +67,22 @@ class RealEstate extends \AdminModule\Seo {
 	/**
      * @orm\Column(length=64, nullable=true)
      */
-    private $city;
-	
-	/**
-     * @orm\Column(length=64, nullable=true)
-     */
-    private $county;
+    private $address;
 	
 	/**
      * @orm\Column(length=64, nullable=true)
      */
     private $mark;
+	
+	/**
+     * @orm\Column(nullable=true)
+     */
+    private $latitude;
+	
+	/**
+     * @orm\Column(nullable=true)
+     */
+    private $longtitude;
 	
 	private $link;
 	
@@ -135,14 +140,6 @@ class RealEstate extends \AdminModule\Seo {
 		return $this->hide;
 	}
 
-	public function getCity() {
-		return $this->city;
-	}
-
-	public function getCounty() {
-		return $this->county;
-	}
-
 	public function getMark() {
 		return $this->mark;
 	}
@@ -195,14 +192,6 @@ class RealEstate extends \AdminModule\Seo {
 		$this->hide = $hide;
 	}
 
-	public function setCity($city) {
-		$this->city = $city;
-	}
-
-	public function setCounty($county) {
-		$this->county = $county;
-	}
-
 	public function setMark($mark) {
 		$this->mark = $mark;
 	}
@@ -222,5 +211,29 @@ class RealEstate extends \AdminModule\Seo {
 		}
 		
 		return new Photo();
+	}
+	
+	public function getAddress() {
+		return $this->address;
+	}
+
+	public function getLatitude() {
+		return $this->latitude;
+	}
+
+	public function getLongtitude() {
+		return $this->longtitude;
+	}
+
+	public function setAddress($address) {
+		$this->address = $address;
+	}
+
+	public function setLatitude($latitude) {
+		$this->latitude = $latitude;
+	}
+
+	public function setLongtitude($longtitude) {
+		$this->longtitude = $longtitude;
 	}
 }

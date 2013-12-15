@@ -54,8 +54,8 @@ class RealestatePresenter extends BasePresenter {
 			return \WebCMS\PriceFormatter::format($item->getPrice());
 		})->setSortable()->setFilterNumber();
 		$grid->addColumnText('mark', 'Mark')->setSortable()->setFilterText();
-		$grid->addColumnText('city', 'City')->setSortable()->setFilterText();
-				
+		$grid->addColumnText('address', 'Address')->setSortable()->setFilterText();
+		
 		$grid->addActionHref("updateRealEstate", 'Edit', 'updateRealEstate', array('idPage' => $this->actualPage->getId()))->getElementPrototype()->addAttributes(array('class' => 'btn btn-primary ajax'));
 		$grid->addActionHref("deleteRealEstate", 'Delete', 'deleteRealEstate', array('idPage' => $this->actualPage->getId()))->getElementPrototype()->addAttributes(array('class' => 'btn btn-danger', 'data-confirm' => 'Are you sure you want to delete this item?'));
 
@@ -105,6 +105,9 @@ class RealestatePresenter extends BasePresenter {
 		$form->addText('metaDescription', 'SEO description')->setAttribute('class', 'form-control');
 		$form->addText('metaKeywords', 'SEO keywords')->setAttribute('class', 'form-control');
 		$form->addText('mark', 'Mark')->setAttribute('class', 'form-control');
+		$form->addText('address', 'Address')->setAttribute('class', 'form-control');
+		$form->addText('longtitude', 'Longtitude')->setAttribute('class', 'form-control');
+		$form->addText('latitude', 'Latitude')->setAttribute('class', 'form-control');
 		$form->addCheckbox('hide', 'Hide')->setAttribute('class', 'form-control');
 		$form->addText('price', 'Price')->setAttribute('class', 'form-control');
 		$form->addMultiSelect('categories', 'Categories')->setTranslator(NULL)->setItems($hierarchy)->setAttribute('class', 'form-control');
@@ -141,6 +144,9 @@ class RealestatePresenter extends BasePresenter {
 		$this->realEstate->setMetaKeywords($values->metaKeywords);
 		$this->realEstate->setLanguage($this->state->language);
 		$this->realEstate->setMark($values->mark);
+		$this->realEstate->setAddress($values->address);
+		$this->realEstate->setLongtitude($values->longtitude);
+		$this->realEstate->setLatitude($values->latitude);
 		$this->realEstate->setHide($values->hide);
 		$this->realEstate->setPrice($values->price);
 		$this->realEstate->setDescription($values->description);
