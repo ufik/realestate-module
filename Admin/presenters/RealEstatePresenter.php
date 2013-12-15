@@ -110,6 +110,7 @@ class RealestatePresenter extends BasePresenter {
 		$form->addText('latitude', 'Latitude')->setAttribute('class', 'form-control');
 		$form->addCheckbox('hide', 'Hide')->setAttribute('class', 'form-control');
 		$form->addText('price', 'Price')->setAttribute('class', 'form-control');
+		$form->addText('priceSuffix', 'Price suffix')->setAttribute('class', 'form-control');
 		$form->addMultiSelect('categories', 'Categories')->setTranslator(NULL)->setItems($hierarchy)->setAttribute('class', 'form-control');
 		$form->addTextArea('description')->setAttribute('class', 'form-control editor');
 		
@@ -149,6 +150,7 @@ class RealestatePresenter extends BasePresenter {
 		$this->realEstate->setLatitude($values->latitude);
 		$this->realEstate->setHide($values->hide);
 		$this->realEstate->setPrice($values->price);
+		$this->realEstate->setPriceSuffix($values->priceSuffix);
 		$this->realEstate->setDescription($values->description);
 		
 		// delete old categories

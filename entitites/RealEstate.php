@@ -84,6 +84,11 @@ class RealEstate extends \AdminModule\Seo {
      */
     private $longtitude;
 	
+	/**
+	 * @orm\Column(nullable=true)
+	 */
+	private $priceSuffix;
+	
 	private $link;
 	
 	/**
@@ -235,5 +240,13 @@ class RealEstate extends \AdminModule\Seo {
 
 	public function setLongtitude($longtitude) {
 		$this->longtitude = $longtitude;
+	}
+	
+	public function getPriceSuffix() {
+		return $this->priceSuffix;
+	}
+
+	public function setPriceSuffix($priceSuffix) {
+		$this->priceSuffix = $priceSuffix;
 	}
 }
