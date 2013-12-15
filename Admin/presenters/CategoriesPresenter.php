@@ -177,7 +177,7 @@ class CategoriesPresenter extends BasePresenter{
 			$this->redirect('Categories:default', array('idPage' => $idPage));
 	}
 	
-	public function actionDefault() {
+	public function actionDefault($idPage) {
 		$main = $this->repository->findBy(array(
 			'title' => 'Main',
 			'level' => 0,

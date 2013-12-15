@@ -24,7 +24,7 @@ class BasePresenter extends \AdminModule\BasePresenter {
 		
 	}
 	
-	public function actionDefault(){
+	public function actionDefault($idPage){
 		$this->page = $this->repository->findOneBy(array(
 			'page' => $this->actualPage
 		));

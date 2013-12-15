@@ -30,7 +30,7 @@ class RealestatePresenter extends BasePresenter {
 		
 	}
 	
-	public function actionDefault(){
+	public function actionDefault($idPage){
 		
 	}
 	
