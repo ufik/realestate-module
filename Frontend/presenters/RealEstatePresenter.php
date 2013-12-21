@@ -145,14 +145,20 @@ class RealestatePresenter extends \FrontendModule\BasePresenter{
 			);
 	}
 	
-	public function textBox($context, $fromPage){
-		$page = $context->em->getRepository('WebCMS\PageModule\Doctrine\Page')->findOneBy(array(
-			'page' => $fromPage
-		));
+	public function listBox($context, $fromPage){
+		$realestate = $context->em->getRepository('WebCMS\RealestateModule\Doctrine\RealEstate')->findBy(array(
+			'language' => $context->language
+		), array('id' => 'DESC'), 5);
 		
-		$text = '<h1>' . $fromPage->getTitle() . '</h1>';
-		$text .= $page->getText();
+		$template = $context->createTemplate();
+		$template->setFile('../app/templates/realestate-module/Realestate/boxes/listBox.latte');
+		$template->link = $context->link(':Frontend:Realestate:RealEstate:default', array(
+			'id' => $fromPage->getId(),
+			'path' => $fromPage->getPath(),
+			'abbr' => $context->abbr
+				));
+		$template->items = $realestate;
 		
-		return $text;
+		return $template;
 	}
 }

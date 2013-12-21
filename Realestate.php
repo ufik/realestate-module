@@ -35,7 +35,7 @@ class Realestate extends \WebCMS\Module {
 	);
 	
 	public function __construct(){
-		//$this->addBox('Page box', 'Page', 'textBox');
+		$this->addBox('Real estate box', 'Realestate', 'listBox');
 	}
 	
 }
