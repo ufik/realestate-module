@@ -111,7 +111,7 @@ class CategoriesPresenter extends BasePresenter{
 		
 		$this->em->flush();
 
-		$this->flashMessage($this->translation['Category has been added.'], 'success');
+		$this->flashMessage('Category has been added.', 'success');
 		
 		if(!$this->isAjax())
 			$this->redirect('Categories:default', array('idPage' => $this->actualPage->getId()));
@@ -151,7 +151,7 @@ class CategoriesPresenter extends BasePresenter{
 		$this->em->remove($this->category);
 		$this->em->flush();
 		
-		$this->flashMessage($this->translation['Category has been removed.'], 'success');
+		$this->flashMessage('Category has been removed.', 'success');
 		
 		if(!$this->isAjax())
 			$this->redirect('Categories:default', array('idPage' => $idPage));
@@ -161,7 +161,7 @@ class CategoriesPresenter extends BasePresenter{
 		$this->category = $this->repository->find($id);
 		
 		$this->repository->moveUp($this->category);
-		$this->flashMessage($this->translation['Category has been moved up.'], 'success');
+		$this->flashMessage('Category has been moved up.', 'success');
 		
 		if(!$this->isAjax())
 			$this->redirect('Categories:default', array('idPage' => $idPage));
@@ -171,7 +171,7 @@ class CategoriesPresenter extends BasePresenter{
 		$this->category = $this->repository->find($id);
 		
 		$this->repository->moveDown($this->category);
-		$this->flashMessage($this->translation['Category has been moved down.'], 'success');
+		$this->flashMessage('Category has been moved down.', 'success');
 
 		if(!$this->isAjax())
 			$this->redirect('Categories:default', array('idPage' => $idPage));

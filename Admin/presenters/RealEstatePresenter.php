@@ -206,7 +206,7 @@ class RealestatePresenter extends BasePresenter {
 		
 		$this->em->flush();
 		
-		$this->flashMessage($this->translation['Real estate has been added.'], 'success');
+		$this->flashMessage('Real estate has been added.', 'success');
 		
 		if(!$this->isAjax())
 			$this->redirect('this', array(
@@ -220,7 +220,7 @@ class RealestatePresenter extends BasePresenter {
 		$this->em->remove($realEstate);
 		$this->em->flush();
 		
-		$this->flashMessage($this->translation['Real estate has been removed.'], 'success');
+		$this->flashMessage('Real estate has been removed.', 'success');
 		
 		if(!$this->isAjax())
 			$this->redirect('RealEstate:default', array('idPage' => $idPage));
