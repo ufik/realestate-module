@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as orm;
  * @orm\Table(name="realestateModulePhoto")
  * @author Tomáš Voslař <tomas.voslar at webcook.cz>
  */
-class Photo extends \AdminModule\Doctrine\Entity{
+class Photo extends \WebCMS\Entity\Entity{
 	
 	/**
 	 * @orm\Column(type="text")

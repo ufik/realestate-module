@@ -10,7 +10,7 @@ use Gedmo\Mapping\Annotation as gedmo;
  * @orm\Entity
  * @author Tomáš Voslař <tomas.voslar at webcook.cz>
  */
-class RealEstate extends \AdminModule\Seo {
+class RealEstate extends \WebCMS\Entity\Seo {
 	/**
      * @orm\Column(length=64)
      */
@@ -39,7 +39,7 @@ class RealEstate extends \AdminModule\Seo {
 	private $categories;
 	
 	/**
-	 * @orm\ManyToOne(targetEntity="\AdminModule\Language")
+	 * @orm\ManyToOne(targetEntity="WebCMS\Entity\Language")
 	 * @orm\JoinColumn(name="language_id", referencedColumnName="id", onDelete="CASCADE")
 	 */
 	private $language;
